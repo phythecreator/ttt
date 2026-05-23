@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Download Teste História 9º Ano</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,Arial,sans-serif;background:#fff;color:#202124;line-height:1.5}
+.container{max-width:1000px;margin:0 auto;padding:72px 24px}
+h1{font-size:28px;font-weight:400;text-align:center;margin-bottom:12px}
+.metadata{text-align:center;color:#5f6368;font-size:14px;margin-bottom:56px}
+.grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px}
+.preview-card{background:#f8f9fa;border:1px solid #e8eaed;border-radius:12px;overflow:hidden}
+.preview-header{background:#fff;padding:14px 20px;border-bottom:1px solid #e8eaed;display:flex;gap:8px;font-size:13px;color:#5f6368}
+.dot{width:12px;height:12px;border-radius:50%}.dot-red{background:#ea4335}.dot-yellow{background:#fbbc04}.dot-green{background:#34a853}
+.preview-body{height:280px;overflow:hidden;background:#fff;position:relative}
+.preview-body iframe{width:100%;height:600px;border:0;transform:scale(0.9);transform-origin:top left;margin-top:-20px}
+.preview-footer{padding:20px;background:#fff;border-top:1px solid #e8eaed}
+.preview-footer h3{font-size:14px;margin-bottom:12px}
+.feature{display:flex;gap:8px;margin-bottom:8px;font-size:13px;color:#5f6368}
+.form-card{background:#fff;border:1px solid #dadce0;border-radius:12px;padding:32px}
+.form-card h2{font-size:20px;font-weight:400;margin-bottom:4px}
+.subtitle{font-size:13px;color:#5f6368;margin-bottom:24px}
+input{width:100%;padding:12px 14px;font-size:14px;border:1px solid #dadce0;border-radius:8px;margin:6px 0 16px}
+input:focus{outline:none;border-color:#1a73e8;box-shadow:0 0 0 1px #1a73e8}
+.checkbox{display:flex;gap:10px;margin:18px 0;font-size:12px;color:#5f6368}
+.btn{width:100%;padding:13px;background:#1a73e8;color:#fff;border:0;border-radius:8px;font-size:14px;cursor:pointer;display:flex;justify-content:center;gap:8px}
+.btn:hover{background:#1765cc}
+.btn:disabled{opacity:0.6;cursor:not-allowed}
+.success{display:none;background:#e6f4ea;color:#137333;padding:12px;border-radius:8px;font-size:13px;margin-top:16px;text-align:center}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Fazer Download de Teste de História 9º Ano PDF</h1>
+<div class="metadata">Fonte: Colégio Vasco da Gama 2024 • Segurança: Verificada</div>
 
+<div class="grid">
+ <div class="preview-card">
+  <div class="preview-header"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div><span style="margin-left:8px">Pré-visualização</span></div>
+  <div class="preview-body">
+   <iframe src="Teste%20Hist%C3%B3ria%209%C2%BA%20Ano%20.pdf#toolbar=0&navpanes=0&page=1&zoom=110"></iframe>
+  </div>
+  <div class="preview-footer">
+   <h3>O que está incluído:</h3>
+   <div class="feature">✓ Teste completo sobre a 2ª Guerra Mundial</div>
+   <div class="feature">✓ Grelha de correção detalhada</div>
+   <div class="feature">✓ PDF pronto a imprimir – 14 páginas</div>
+  </div>
+ </div>
+
+ <div class="form-card">
+  <h2>Preencha para descarregar</h2>
+  <p class="subtitle">Acesso imediato</p>
+  <form id="dlForm">
+   <label>Nome completo</label>
+   <input type="text" id="nome" name="Nome" placeholder="Ex: João Pereira" required>
+   <label>Email</label>
+   <input type="email" id="email" name="Email" placeholder="seu@email.com" required>
+   <div class="checkbox"><input type="checkbox" id="ok" required><label for="ok">Autorizo o registo para acesso ao material</label></div>
+   <button type="submit" class="btn" id="btn">Descarregar PDF</button>
+   <div class="success" id="okMsg">✓ Download iniciado! Verifica a tua pasta de Transferências.</div>
+  </form>
+ </div>
+</div>
+</div>
+
+<script>
+const form = document.getElementById('dlForm');
+const btn = document.getElementById('btn');
+const msg = document.getElementById('okMsg');
+const PDF_URL = 'Teste%20Hist%C3%B3ria%209%C2%BA%20Ano%20.pdf';
+
+form.addEventListener('submit', async (e) => {
+ e.preventDefault();
+ btn.disabled = true;
+ btn.textContent = 'A enviar...';
+
+ const data = new FormData();
+ data.append('Nome', document.getElementById('nome').value);
+ data.append('Email', document.getElementById('email').value);
+ data.append('_subject', 'Novo download - Teste História');
+ data.append('_captcha', 'false');
+
+ try {
+   await fetch('https://formsubmit.co/ajax/frsilvinha11@gmail.com', {
+     method: 'POST',
+     body: data,
+     headers: { 'Accept': 'application/json' }
+   });
+ } catch(err) {}
+
+ const a = document.createElement('a');
+ a.href = PDF_URL;
+ a.download = 'Teste História 9º Ano.pdf';
+ document.body.appendChild(a);
+ a.click();
+ a.remove();
+
+ msg.style.display = 'block';
+ btn.textContent = 'Descarregar PDF';
+ btn.disabled = false;
+ form.reset();
+});
+</script>
+</body>
+</html>

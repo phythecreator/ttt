@@ -41,11 +41,11 @@ input:focus{outline:none;border-color:#1a73e8;box-shadow:0 0 0 1px #1a73e8}
  <div class="preview-card">
   <div class="preview-header"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div><span style="margin-left:8px">Pré-visualização</span></div>
   <div class="preview-body">
-   <iframe src="Teste%20Hist%C3%B3ria%209%C2%BA%20Ano%20.pdf#toolbar=0&navpanes=0&page=1&zoom=110"></iframe>
+   <iframe src="Teste-Historia-9Ano.pdf#toolbar=0&navpanes=0&page=1&zoom=110"></iframe>
   </div>
   <div class="preview-footer">
    <h3>O que está incluído:</h3>
-   <div class="feature">✓ Teste completo sobre a 2ª Guerra Mundial</div>
+   <div class="feature">✓ Teste completo sobre Estado Novo, 2ª Guerra Mundial</div>
    <div class="feature">✓ Grelha de correção detalhada</div>
    <div class="feature">✓ PDF pronto a imprimir – 14 páginas</div>
   </div>
@@ -71,7 +71,7 @@ input:focus{outline:none;border-color:#1a73e8;box-shadow:0 0 0 1px #1a73e8}
 const form = document.getElementById('dlForm');
 const btn = document.getElementById('btn');
 const msg = document.getElementById('okMsg');
-const PDF_URL = 'Teste%20Hist%C3%B3ria%209%C2%BA%20Ano%20.pdf';
+const PDF_URL = 'Teste-Historia-9Ano.pdf';
 
 form.addEventListener('submit', async (e) => {
  e.preventDefault();
@@ -94,7 +94,7 @@ form.addEventListener('submit', async (e) => {
 
  const a = document.createElement('a');
  a.href = PDF_URL;
- a.download = 'Teste História 9º Ano.pdf';
+ a.download = 'Teste-Historia-9Ano.pdf';
  document.body.appendChild(a);
  a.click();
  a.remove();
